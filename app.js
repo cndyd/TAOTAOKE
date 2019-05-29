@@ -11,10 +11,11 @@ const bodyParser=require("body-parser");
 
 //3:创建连接池
 const pool = mysql.createPool({
-  host:"127.0.0.1",
-  user:"root",
-  password:"",
-  database:"taotao"
+  host     : process.env.MYSQL_HOST,
+    port     : process.env.MYSQL_PORT,
+    user     : process.env.ACCESSKEY,
+    password : process.env.SECRETKEY,
+    database : 'app_' + process.env.APPNAME
 });
 
 //4:创建express对象
@@ -40,7 +41,7 @@ server.use(session({
   }
 }))
 //5:绑定监听端口 3000
-server.listen(3000);
+server.listen(5050);
 //5.1:指定静态目录.保存图片资源
 //    项目中所有图片都需要保存在服务器端
 //    重启动服务器 

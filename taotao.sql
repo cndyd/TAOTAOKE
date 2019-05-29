@@ -1,15 +1,10 @@
-SET NAMES UTF8;
-DROP DATABASE IF EXISTS taotao;
-CREATE DATABASE taotao CHARSET=UTF8;
-USE taotao;
 
-
-/*主页轮播图片表*/
+#主页轮播图片表*/
 CREATE TABLE home_lunbo(
   lbid INT PRIMARY KEY AUTO_INCREMENT,
-  lbimg VARCHAR(200) /*轮播图片*/
+  lbimg VARCHAR(200) #轮播图片*/
 );
-/*轮播图片表插入*/
+#轮播图片表插入*/
 INSERT INTO home_lunbo VALUES
 (NULL,'img/lun1.jpg'),
 (NULL,'img/lun2.jpg'),
@@ -17,14 +12,14 @@ INSERT INTO home_lunbo VALUES
 (NULL,'img/lun4.jpg'),
 (NULL,'img/lun5.jpg');
 
-/*主页分组表*/
+#主页分组表*/
 CREATE TABLE home_fenzu(
   fzid INT PRIMARY KEY AUTO_INCREMENT,
-  fzimg VARCHAR(200), /*分组图片*/
-  fzurl VARCHAR(100), /*分组url*/
-  fztext VARCHAR(12) /*分组名称*/
+  fzimg VARCHAR(200), #分组图片*/
+  fzurl VARCHAR(100), #分组url*/
+  fztext VARCHAR(12) #分组名称*/
 );
-/*主页分组表插入*/
+#主页分组表插入*/
 INSERT INTO home_fenzu VALUES
 (NULL,'img/fz1.png','/','主页'),
 (NULL,'img/fz2.png','/','男装'),
@@ -37,30 +32,30 @@ INSERT INTO home_fenzu VALUES
 (NULL,'img/fz9.png','/','水果'),
 (NULL,'img/fz10.png','/','杂货');
 
-/*主页热卖栏*/
+#主页热卖栏*/
 CREATE TABLE home_remai(
   rmid INT PRIMARY KEY AUTO_INCREMENT,
-  rmname VARCHAR(12), /*热卖名称*/
-  rmurl VARCHAR(200), /*热卖url*/
-  rmimg VARCHAR(200), /*热卖图片单*/
-  rmimage VARCHAR(200) /*分组图片双*/
+  rmname VARCHAR(12), #热卖名称*/
+  rmurl VARCHAR(200), #热卖url*/
+  rmimg VARCHAR(200), #热卖图片单*/
+  rmimage VARCHAR(200) #分组图片双*/
 );
-/*主页热卖栏表插入*/
+#主页热卖栏表插入*/
 INSERT INTO home_remai VALUES
 (NULL,'当前热卖','/','img/wupin1.jpg','img/wupin2.jpg'),
 (NULL,'限时抢购','/','img/wupin3.jpg','img/wupin4.jpg'),
 (NULL,'最大折扣','/','img/wupin5.png','img/wupin6.jpg'),
 (NULL,'必买清单','/','img/wupin7.png','img/wupin8.jpg');
 
-/*主页每日热卖*/
+#主页每日热卖*/
 CREATE TABLE home_meiri(
   mrid INT PRIMARY KEY AUTO_INCREMENT,
-  mrurl VARCHAR(200), /*热卖url*/
-  mrtitle VARCHAR(12), /*热卖标题*/
-  mrtext VARCHAR(12), /*热卖文字*/
-  mrimg VARCHAR(200) /*热卖图片单*/
+  mrurl VARCHAR(200), #热卖url*/
+  mrtitle VARCHAR(12), #热卖标题*/
+  mrtext VARCHAR(12), #热卖文字*/
+  mrimg VARCHAR(200) #热卖图片单*/
 );
-/*主页每日热卖表插入*/
+#主页每日热卖表插入*/
 INSERT INTO home_meiri VALUES
 (NULL,'/','淘淘星球','分期免息','img/meiri1.jpg'),
 (NULL,'/','名牌秒杀','低价抢大牌','img/meiri2.jpg'),
@@ -71,31 +66,31 @@ INSERT INTO home_meiri VALUES
 (NULL,'/','排行榜','当季最热','img/meiri7.jpg'),
 (NULL,'/','二手拍拍','全部5折起','img/meiri8.jpg');
 
-/*主页展览*/
+#主页展览*/
 CREATE TABLE home_zhanlan(
   zlid INT PRIMARY KEY AUTO_INCREMENT,
-  zlurl VARCHAR(200), /*展览1url*/
-  zlimg VARCHAR(200), /*展览1图片*/
-  zlurls VARCHAR(200), /*展览2url*/
-  zlimgs VARCHAR(200), /*展览2图片*/
-  zltitle VARCHAR(200) /*展览标题图片*/
+  zlurl VARCHAR(200), #展览1url*/
+  zlimg VARCHAR(200), #展览1图片*/
+  zlurls VARCHAR(200), #展览2url*/
+  zlimgs VARCHAR(200), #展览2图片*/
+  zltitle VARCHAR(200) #展览标题图片*/
 );
-/*主页每日热卖表插入*/
+#主页每日热卖表插入*/
 INSERT INTO home_zhanlan VALUES
 (NULL,'/','img/zhanlan1.jpg','/','img/zhanlan1s.jpg','img/zhanlanBT1.png'),
 (NULL,'/','img/zhanlan2.jpg','/','img/zhanlan2s.jpg','img/zhanlanBT2.png'),
 (NULL,'/','img/zhanlan3.jpg','/','img/zhanlan3s.jpg','img/zhanlanBT3.png');
 
-/*推荐区*/
+#推荐区*/
 CREATE TABLE home_tuijian(
   tjid INT PRIMARY KEY AUTO_INCREMENT,
-  tjurl VARCHAR(200), /*推荐url*/
-  tjimg VARCHAR(200), /*推荐图片*/
-  tjtitle VARCHAR(30), /*推荐标题*/
-  tjprice DECIMAL(10,2) NOT NULL, /*推荐价格*/
-  tjpeople VARCHAR(200) /*推荐购买人数*/
+  tjurl VARCHAR(200), #推荐url*/
+  tjimg VARCHAR(200), #推荐图片*/
+  tjtitle VARCHAR(30), #推荐标题*/
+  tjprice DECIMAL(10,2) NOT NULL, #推荐价格*/
+  tjpeople VARCHAR(200) #推荐购买人数*/
 );
-/*主页推荐区表插入*/
+#主页推荐区表插入*/
 INSERT INTO home_tuijian VALUES
 (NULL,'/','img/tuijian1.jpg','睡衣女夏季短袖棉质睡裙可爱卡通休闲小清新家居服 小丸子裙 M','39.00','124'),
 (NULL,'/','img/tuijian2.jpg','新款包斜跨仙女可爱迷你毛毛链条小包包女2018新款单肩斜挎包 黑色','88.80','55'),
@@ -107,7 +102,7 @@ INSERT INTO home_tuijian VALUES
 (NULL,'/','img/tuijian8.jpg','珊瑚绒毯子毛巾小被子加绒垫床单单人空调毯办公室午睡法兰绒毛毯 加密加厚亲肤透气 多色随机发货','156.00','705');
 
 
-/*创建购物车表*/
+#创建购物车表*/
 CREATE TABLE taotao_cart(
   id INT PRIMARY KEY AUTO_INCREMENT,
   tjid VARCHAR(999),
@@ -120,7 +115,7 @@ CREATE TABLE taotao_cart(
 
 
 
-/*商品分类*/
+#商品分类*/
 CREATE TABLE fenlei_remen(
   id INT PRIMARY KEY AUTO_INCREMENT,
   rmurl VARCHAR(200),
@@ -142,14 +137,14 @@ INSERT INTO fenlei_remen VALUES
 (null,'/Commodity','img/fenlei/xiyiye.png','洗衣液');
 
 
-/*创建用户信息表*/
+#创建用户信息表*/
 CREATE TABLE taotao_login(
   uid INT PRIMARY KEY AUTO_INCREMENT,
   uname VARCHAR(25),
   upwd VARCHAR(32),
   phone VARCHAR(11)
 );
-/*2:添加二条测试数据*/
+#2:添加二条测试数据*/
 INSERT INTO taotao_login VALUES
 (NULL,"long",md5('123456'),'13523411193'),
 (NULL,"tom",md5('123456'),'13511111111');
